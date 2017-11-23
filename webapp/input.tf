@@ -14,3 +14,12 @@ data "aws_ami" "ubuntu" {
  owners = ["099720109477"] #Canonical
 }
 
+
+data "template_file" "temp_training" {
+        template = "${file("${path.module}/userdata.tpl")}"
+
+        vars {
+                username = "David"
+        }
+}
+
