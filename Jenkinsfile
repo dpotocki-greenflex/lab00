@@ -31,8 +31,7 @@ pipeline {
                    }
             }
 
-    	   }	
-   	}
+    	   }   	
 	
 	stage('apply') {
             steps {
@@ -49,7 +48,7 @@ pipeline {
             }
 
            }
-          
+    }      
 }    	
 
 
