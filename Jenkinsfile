@@ -18,7 +18,7 @@ pipeline {
             }
         }
     }	
-    stages {
+    
         stage('fmt') {
             steps {
                 withCredentials([[
@@ -34,7 +34,7 @@ pipeline {
             	   }
             }
         }
-    }
+   
 }    	
 
 
