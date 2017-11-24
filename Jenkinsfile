@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage("fmt"){
       steps{
-          ercho "test"
+          echo "test"
           sh "terraform init"
           sh "terraform fmt"
       }
