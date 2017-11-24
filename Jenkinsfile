@@ -11,6 +11,7 @@ pipeline {
                     secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
             	   ]]) {
                     dir ("web") {
+			sh 'ls -l'
 			sh 'cd webapp/'
                         sh 'terraform init'
                         sh 'terraform fmt'
