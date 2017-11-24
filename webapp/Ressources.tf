@@ -1,6 +1,6 @@
 resource "aws_launch_configuration" "lc_training" {
   name_prefix   = "-lc-training-"
-  image_id      = "${data.aws_ami.ubuntu.id}"
+  image_id      = "ami-3df24344"
   instance_type = "t2.micro"
   security_groups = ["${aws_security_group.sg_training.id}"]
   key_name = "davKey"
