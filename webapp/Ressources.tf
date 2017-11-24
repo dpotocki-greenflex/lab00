@@ -12,7 +12,7 @@ resource "aws_launch_configuration" "lc_training" {
 }
 
 resource "aws_autoscaling_group" "asg_training" {
-  name_prefix                      = "asg_training-"
+  name                     = "${aws_launch_configuration.lc_training.name}"
   max_size                  = 2
   min_size                  = 2
   launch_configuration      = "${aws_launch_configuration.lc_training.name}"
@@ -21,6 +21,10 @@ resource "aws_autoscaling_group" "asg_training" {
   health_check_type = "EC2"
   vpc_zone_identifier = ["${data.terraform_remote_state.rs-VPC.subnet_public}"]
   load_balancers = ["${aws_elb.elb_training.name}"]
+  
+  lifecycle {
+    create_before_destroy = true
+  }
  
 }
 
