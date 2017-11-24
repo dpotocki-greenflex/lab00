@@ -1,10 +1,10 @@
 pipeline {
   agent any
     stages {
-      stage ('fmt'){
+      stage ("fmt"){
         steps{
-          sh 'terraform init'
-          sh 'terraform fmt'
+          sh "terraform init"
+          sh "terraform fmt"
         }
        }
      }
